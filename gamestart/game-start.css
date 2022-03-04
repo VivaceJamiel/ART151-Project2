@@ -1,3 +1,81 @@
-body, html {
-    background-color: aliceblue;
+body {
+    background-color: black;
+    background-image: radial-gradient(
+      rgba(0, 150, 0, 0.75), black 120%
+    );
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    padding: 2rem;
+    color: white;
+    font: 14px Inconsolata, monospace;
+    text-shadow: 0 0 5px #C8C8C8;
+    position: relative;
+}
+
+.typewriter {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    /* border-right: 2px solid rgba(255,255,255,.75); */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+}
+
+.anim-typewriter{
+    margin-left: 0;
+    animation: typewriter 1s steps(12) 1s 1 normal both,
+                blinkTextCursor 500ms steps(44) infinite normal;
+    }
+    @keyframes typewriter{
+        from{width: 0;}
+        to{width: 247.8px}
+    }
+    @keyframes blinkTextCursor{
+        from{border-right-color: rgba(255,255,255,.75);}
+        to{border-right-color: transparent;
+    }
+}
+
+.anim-name{
+    margin-left: 0;
+    animation: typewriter2 1s steps(12) 1s 1 normal both,
+                blinkTextCursor2 500ms steps(44) infinite normal;
+    }
+    @keyframes typewriter2{
+        from{width: 0;}
+        to{width: 247.8px}
+    }
+    @keyframes blinkTextCursor2{
+        from{border-right-color: rgba(255,255,255,.75);}
+        to{border-right-color: transparent;
+    }
+}
+
+.anim-welcome{
+    margin-left: 0;
+    animation: typewriter3 1s steps(20) 1s 1 normal both,
+                blinkTextCursor3 500ms steps(44) infinite normal;
+    }
+    @keyframes typewriter3{
+        from{width: 0;}
+        to{width: 420px}
+    }
+    @keyframes blinkTextCursor3{
+        from{border-right-color: rgba(255,255,255,.75);}
+        to{border-right-color: transparent;
+    }
+}
+
+.terminal {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    margin-bottom: 1em;
+}
+
+#input {
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-right: black;
 }
