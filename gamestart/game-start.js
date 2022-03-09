@@ -1,5 +1,5 @@
 function getData() {
-    var data = window.localStorage.getItem("name");
+    var data = window.sessionStorage.getItem("name");
     if (data) {
         return data;
     }

@@ -11,7 +11,7 @@ function intialize() {
             nameContainer = document.getElementById("input")
             setTimeout(() => {
                 nameContainer.remove()
-                window.localStorage.setItem("name", userName);
+                window.sessionStorage.setItem("name", userName);
                 window.location.href = "./gamestart/game-start.html";
             }, 2000);
         }
