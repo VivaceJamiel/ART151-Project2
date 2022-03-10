@@ -23,44 +23,14 @@ body {
 
 .anim-typewriter{
     margin-left: 0;
-    animation: typewriter 1s steps(12) 1s 1 normal both,
+    animation: typewriter 1s steps(50) 1s 1 normal both,
                 blinkTextCursor 500ms steps(44) infinite normal;
     }
     @keyframes typewriter{
         from{width: 0;}
-        to{width: 247.8px}
+        to{width: 1300px}
     }
     @keyframes blinkTextCursor{
-        from{border-right-color: rgba(255,255,255,.75);}
-        to{border-right-color: transparent;
-    }
-}
-
-.anim-name{
-    margin-left: 0;
-    animation: typewriter2 1s steps(12) 1s 1 normal both,
-                blinkTextCursor2 500ms steps(44) infinite normal;
-    }
-    @keyframes typewriter2{
-        from{width: 0;}
-        to{width: 247.8px}
-    }
-    @keyframes blinkTextCursor2{
-        from{border-right-color: rgba(255,255,255,.75);}
-        to{border-right-color: transparent;
-    }
-}
-
-.anim-welcome{
-    margin-left: 0;
-    animation: typewriter3 1s steps(20) 1s 1 normal both,
-                blinkTextCursor3 500ms steps(44) infinite normal;
-    }
-    @keyframes typewriter3{
-        from{width: 0;}
-        to{width: 420px}
-    }
-    @keyframes blinkTextCursor3{
         from{border-right-color: rgba(255,255,255,.75);}
         to{border-right-color: transparent;
     }
