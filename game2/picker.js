@@ -139,7 +139,7 @@ function fin() {
         type("Almost done...")
     }, 3000);
     setTimeout(function () {
-        window.location.href = "../game3/math.html";
+        window.location.href = "../game3/rev.html";
     }, 6000);
 }
 
