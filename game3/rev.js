@@ -1,7 +1,9 @@
 var waiting = false;
+var stage = 0;
 
 function intro() {
     var input = document.getElementById("input");
+    input.value = "";
     input.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             if (waiting) {
@@ -11,7 +13,7 @@ function intro() {
     });                
 
     setTimeout(function () {
-        type("You will answer true or false based on what you know...");
+        type("You will answer TRUE or FALSE based on what you know...");
     }, 3000);
     setTimeout(function () {
         type("This will determine the outcome of the tests");
@@ -32,9 +34,122 @@ function start_game() {
     }, 3000);
 }
 
+// Just put the above lines into the answer function.
 function answer() {
     var input = document.getElementById("input").value;
-    console.log(input)
+    if (stage === 0) {
+        if (input === "true") {
+            type("Correct!");
+            setTimeout(function () {
+                stage = 1;
+                waiting = false;
+            }, 2000);
+        } else {
+            type("Incorrect!");
+            setTimeout(function () {
+                stage = 1;
+                waiting = false;
+            }, 2000);
+        }
+        setTimeout(function () {
+            type("You are the last person on this planet...");
+            waiting = true;
+        }, 3000);
+    }
+    if (stage === 1) {
+        if (input === "true") {
+            type("Correct!");
+            setTimeout(function () {
+                stage = 2;
+                waiting = false;
+            }, 2000);
+        } else {
+            type("Incorrect!");
+            setTimeout(function () {
+                stage = 2;
+                waiting = false;
+            }, 2000);
+        }
+        setTimeout(() => {
+            type("There are no entities hunting you at this moment...");
+            waiting = true;    
+        }, 3000);
+    }
+    if (stage === 2) {
+        if (input === "true") {
+            type("Correct!");
+            setTimeout(function () {
+                stage = 3;
+                waiting = false;
+            }, 2000);
+        } else {
+            type("Incorrect!");
+            setTimeout(function () {
+                stage = 3;
+                waiting = false;
+            }, 2000);
+        }
+        setTimeout(function () {
+            type("You were put here by someone to save you...");
+            waiting = true;
+        }, 3000);
+    }
+    if (stage === 3) {
+        if (input === "true") {
+            type("Correct!");
+            setTimeout(function () {
+                stage = 4;
+                waiting = false;
+            }, 2000);
+        } else {
+            type("Incorrect!");
+            setTimeout(function () {
+                stage = 4;
+                waiting = false;
+            }, 2000);
+        }
+        setTimeout(function () {
+            type("Humanity is doomed...");
+            waiting = true;
+        }, 3000);
+    }
+    waiting = false;
+    if (stage === 4) {
+        if (input === "true") {
+            type("Correct!");
+            setTimeout(function () {
+                stage = 4;
+                waiting = false;
+            }, 2000);
+        } else {
+            type("Incorrect!");
+            setTimeout(function () {
+                stage = 4;
+                waiting = false;
+            }, 2000);
+        }
+        setTimeout(function () {
+            fin();
+        }, 3000);
+    }
+}
+
+function fin() {
+    setTimeout(function () {
+        type("The tests are finished...");
+    }, 2000);
+    setTimeout(function () {
+        type("Perhaps the truth is hard to believe...");
+    }, 4000);
+    setTimeout(function () {
+        type("Perhaps its better to have you experience the truth for yourself...");
+    }, 6000);
+    setTimeout(function () {
+        type("You are released...");
+    }, 8000);
+    setTimeout(function () {
+        type("However, you might not be so happy about that...");
+    }, 10000);
 }
 
 function get_data() {
