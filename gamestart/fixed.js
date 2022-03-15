@@ -62,6 +62,7 @@ function fin() {
 }
 
 function intro() {
+    alert("type in reponse next to the \">\" symbol");
     var input = document.getElementById("input").value = "";
     ran = Math.floor(Math.random() * 100000);
     var input = document.getElementById("input");
