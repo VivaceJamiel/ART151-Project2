@@ -13,7 +13,6 @@ body {
     position: relative;
 }
 
-
 .typewriter {
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     /* border-right: 2px solid rgba(255,255,255,.75); */
@@ -29,7 +28,7 @@ body {
     }
     @keyframes typewriter{
         from{width: 0;}
-        to{width: 735px}
+        to{width: 1500px}
     }
     @keyframes blinkTextCursor{
         from{border-right-color: rgba(255,255,255,.75);}
@@ -39,8 +38,8 @@ body {
 
 img {
     float: left;
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
 }
 
@@ -56,28 +55,4 @@ img {
     color: white;
     border: none;
     border-right: black;
-}
-
-#picture-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#picture-container h1 {
-    text-align: center;
-}
-
-.pictures {
-    margin: 50px auto 0px auto;
-}
-
-#pic1 {
-    margin-top: auto;
-    margin-right: 50px;
-}
-
-#pic2 {
-    margin-top: auto;
-    margin-left: 50px;
 }

@@ -37,119 +37,114 @@ function start_game() {
 // Just put the above lines into the answer function.
 function answer() {
     var input = document.getElementById("input").value;
-    if (stage === 0) {
-        if (input === "true") {
-            type("Correct!");
+    input = input.toLowerCase();
+    console.log(input);
+    if (input !== "true" && input !== "false") {
+        alert("Please enter either TRUE or FALSE");
+    } else {
+        if (stage === 0) {
+            if (input === "true") {
+                type("Correct!");
+                setTimeout(function () {
+                    stage = 1;
+                    waiting = false;
+                }, 2000);
+            } else {
+                type("Incorrect!");
+                setTimeout(function () {
+                    stage = 1;
+                    waiting = false;
+                }, 2000);
+            }
             setTimeout(function () {
-                stage = 1;
-                waiting = false;
-            }, 2000);
-        } else {
-            type("Incorrect!");
-            setTimeout(function () {
-                stage = 1;
-                waiting = false;
-            }, 2000);
+                type("You are the last person on this planet...");
+                waiting = true;
+            }, 3000);
         }
-        setTimeout(function () {
-            type("You are the last person on this planet...");
-            waiting = true;
-        }, 3000);
-    }
-    if (stage === 1) {
-        if (input === "true") {
-            type("Correct!");
-            setTimeout(function () {
-                stage = 2;
-                waiting = false;
-            }, 2000);
-        } else {
-            type("Incorrect!");
-            setTimeout(function () {
-                stage = 2;
-                waiting = false;
-            }, 2000);
+        if (stage === 1) {
+            if (input === "true") {
+                type("Correct!");
+                setTimeout(function () {
+                    stage = 2;
+                    waiting = false;
+                }, 2000);
+            } else {
+                type("Incorrect!");
+                setTimeout(function () {
+                    stage = 2;
+                    waiting = false;
+                }, 2000);
+            }
+            setTimeout(() => {
+                type("There are no entities hunting you at this moment...");
+                waiting = true;    
+            }, 3000);
         }
-        setTimeout(() => {
-            type("There are no entities hunting you at this moment...");
-            waiting = true;    
-        }, 3000);
-    }
-    if (stage === 2) {
-        if (input === "true") {
-            type("Correct!");
+        if (stage === 2) {
+            if (input === "true") {
+                type("Incorrect!");
+                setTimeout(function () {
+                    stage = 3;
+                    waiting = false;
+                }, 2000);
+            } else {
+                type("Correct!");
+                setTimeout(function () {
+                    stage = 3;
+                    waiting = false;
+                }, 2000);
+            }
             setTimeout(function () {
-                stage = 3;
-                waiting = false;
-            }, 2000);
-        } else {
-            type("Incorrect!");
-            setTimeout(function () {
-                stage = 3;
-                waiting = false;
-            }, 2000);
+                type("You were put here by someone to save you...");
+                waiting = true;
+            }, 3000);
         }
-        setTimeout(function () {
-            type("You were put here by someone to save you...");
-            waiting = true;
-        }, 3000);
-    }
-    if (stage === 3) {
-        if (input === "true") {
-            type("Correct!");
+        if (stage === 3) {
+            if (input === "true") {
+                type("Incorrect!");
+                setTimeout(function () {
+                    stage = 4;
+                    waiting = false;
+                }, 2000);
+            } else {
+                type("Correct!");
+                setTimeout(function () {
+                    stage = 4;
+                    waiting = false;
+                }, 2000);
+            }
             setTimeout(function () {
-                stage = 4;
-                waiting = false;
-            }, 2000);
-        } else {
-            type("Incorrect!");
-            setTimeout(function () {
-                stage = 4;
-                waiting = false;
-            }, 2000);
+                type("Humanity is doomed...");
+                waiting = true;
+            }, 3000);
         }
-        setTimeout(function () {
-            type("Humanity is doomed...");
-            waiting = true;
-        }, 3000);
-    }
-    waiting = false;
-    if (stage === 4) {
-        if (input === "true") {
-            type("Correct!");
+        waiting = false;
+        if (stage === 4) {
+            if (input === "true") {
+                type("Correct!");
+                setTimeout(function () {
+                    stage = 4;
+                    waiting = false;
+                }, 2000);
+            } else {
+                type("Incorrect!");
+                setTimeout(function () {
+                    stage = 4;
+                    waiting = false;
+                }, 2000);
+            }
             setTimeout(function () {
-                stage = 4;
-                waiting = false;
-            }, 2000);
-        } else {
-            type("Incorrect!");
-            setTimeout(function () {
-                stage = 4;
-                waiting = false;
-            }, 2000);
+                fin();
+            }, 1000);
         }
-        setTimeout(function () {
-            fin();
-        }, 3000);
     }
+    document.getElementById("input").value = "";
 }
 
 function fin() {
     setTimeout(function () {
-        type("The tests are finished...");
-    }, 2000);
-    setTimeout(function () {
-        type("Perhaps the truth is hard to believe...");
-    }, 4000);
-    setTimeout(function () {
-        type("Perhaps its better to have you experience the truth for yourself...");
-    }, 6000);
-    setTimeout(function () {
-        type("You are released...");
-    }, 8000);
-    setTimeout(function () {
-        type("However, you might not be so happy about that...");
-    }, 10000);
+        window.location.href = "../final/final.html";
+    }, 3000);
 }
 
 function get_data() {

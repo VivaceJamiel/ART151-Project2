@@ -49,3 +49,31 @@ body {
     border: none;
     border-right: black;
 }
+
+#history {
+    position: absolute;
+    height: auto;
+}
+
+#history-container {
+    bottom: 0;
+    margin-bottom: 2.5em;
+    position: fixed;
+}
+
+ul {
+    max-height: 300px;
+    bottom: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    display: none;
+}
+
+li:nth-child(-n+10) {
+    display: list-item;
+}
