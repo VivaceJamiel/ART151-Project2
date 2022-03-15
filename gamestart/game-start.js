@@ -106,7 +106,7 @@ function intro() {
     setTimeout(function () {
         type("Pick a number from 1 - 100000")
         game_start = true;
-    }, 22000);
+    }, 24000);
 
 }
 
