@@ -1,7 +1,11 @@
 var waiting = false;
 var stage = 0;
+var score = 0;
+
+
 
 function intro() {
+    score = parseInt(window.sessionStorage.getItem("score"));
     var input = document.getElementById("input");
     input.value = "";
     input.addEventListener("keydown", function (event) {
@@ -52,12 +56,13 @@ function answer() {
             } else {
                 type("Incorrect!");
                 setTimeout(function () {
+                    score = score + 1;
                     stage = 1;
                     waiting = false;
                 }, 2000);
             }
             setTimeout(function () {
-                type("You are the last person on this planet...");
+                type("You are not the last person on this planet...");
                 waiting = true;
             }, 3000);
         }
@@ -71,6 +76,7 @@ function answer() {
             } else {
                 type("Incorrect!");
                 setTimeout(function () {
+                    score = score + 1;
                     stage = 2;
                     waiting = false;
                 }, 2000);
@@ -84,6 +90,7 @@ function answer() {
             if (input === "true") {
                 type("Incorrect!");
                 setTimeout(function () {
+                    score = score + 1;
                     stage = 3;
                     waiting = false;
                 }, 2000);
@@ -103,6 +110,7 @@ function answer() {
             if (input === "true") {
                 type("Incorrect!");
                 setTimeout(function () {
+                    score = score + 1;
                     stage = 4;
                     waiting = false;
                 }, 2000);
@@ -129,11 +137,13 @@ function answer() {
             } else {
                 type("Incorrect!");
                 setTimeout(function () {
+                    score = score + 1;
                     stage = 4;
                     waiting = false;
                 }, 2000);
             }
             setTimeout(function () {
+                window.sessionStorage.setItem("score", score);
                 fin();
             }, 1000);
         }

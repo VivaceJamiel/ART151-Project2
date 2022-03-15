@@ -5,7 +5,7 @@ var answer = "";
 var score = 0;
 
 function intro() {
-    score = window.sessionStorage.getItem("score");
+    score = parseInt(window.sessionStorage.getItem("score"));
     var input = document.getElementById("input");
     input.addEventListener("keydown", function (event) {
         var img1 = document.getElementById("img1");
