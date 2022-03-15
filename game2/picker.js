@@ -2,7 +2,10 @@ var waiting = false;
 var stage = 1;
 var answer = "";
 
+var score = 0;
+
 function intro() {
+    score = window.sessionStorage.getItem("score");
     var input = document.getElementById("input");
     input.addEventListener("keydown", function (event) {
         var img1 = document.getElementById("img1");
@@ -24,6 +27,7 @@ function intro() {
                     } else {
                         type("Wrong!");
                         setTimeout(function () {
+                            score = score + 1;
                             stage = 2;
                             stage2();
                             img1.style.visibility = "hidden";
@@ -43,6 +47,7 @@ function intro() {
                     } else {
                         type("Wrong!");
                         setTimeout(function () {
+                            score = score + 1;
                             stage = 3;
                             stage3();
                             img1.style.visibility = "hidden";
@@ -62,6 +67,7 @@ function intro() {
                     } else {
                         type("Wrong!");
                         setTimeout(function () {
+                            score = score + 1;
                             stage = 4;
                             fin();
                             img1.style.visibility = "hidden";
@@ -94,15 +100,24 @@ function game_start() {
     setTimeout(function () {
         var img1 = document.createElement("img");
         var img2 = document.createElement("img");
+        var txt1 = document.createElement("h1");
+        var txt2 = document.createElement("h1");
+        txt1.textContent = "1";
+        txt2.textContent = "2";
+        txt1.setAttribute("id", "txt1");
+        txt2.setAttribute("id", "txt2");
         img1.setAttribute("id", "img1");
         img2.setAttribute("id", "img2");
-        // img1.className = "anim-img";
-        // img2.className = "anim-img";
+        img1.className = "pictures";
+        img2.className = "pictures";
         img1.src = "img/bright_sunny.webp";
         img2.src = "img/dark_clouds.jpg";
-        var container = document.getElementById("picture-container");
-        container.appendChild(img1);
-        container.appendChild(img2);
+        var container1 = document.getElementById("pic1");
+        var container2 = document.getElementById("pic2");
+        container1.appendChild(img1);
+        container1.appendChild(txt1);
+        container2.appendChild(img2);
+        container2.appendChild(txt2);
     }, 2000);
     waiting = true;
 }
@@ -134,11 +149,16 @@ function stage3() {
 }
 
 function fin() {
+    var txt1 = document.getElementById("txt1");
+    var txt2 = document.getElementById("txt2");
+    txt1.remove();
+    txt2.remove();
     type("One more test...")
     setTimeout(function () {
         type("Almost done...")
     }, 3000);
     setTimeout(function () {
+        window.sessionStorage.setItem("score", score);
         window.location.href = "../game3/rev.html";
     }, 6000);
 }
